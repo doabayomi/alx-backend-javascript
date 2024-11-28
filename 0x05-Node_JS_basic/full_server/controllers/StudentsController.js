@@ -2,7 +2,7 @@ const readDatabase = require('../utils');
 
 class StudentsController {
   static getAllStudents(request, response) {
-    const database = process.argv[2];
+    const database = process.argv.length > 2 ? process.argv[2] : '';
 
     readDatabase(database)
       .then((summary) => {
@@ -22,7 +22,7 @@ class StudentsController {
   static getAllStudentsByMajor(request, response) {
     const { major } = request.params;
     const validMajors = ['CS', 'SWE'];
-    const database = process.argv[2];
+    const database = process.argv.length > 2 ? process.argv[2] : '';
 
     if (!validMajors.includes(major)) {
       response.status(500).send('Major parameter must be CS or SWE');
