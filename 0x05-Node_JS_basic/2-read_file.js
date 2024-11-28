@@ -38,12 +38,12 @@ function countStudents(pathToDatabase) {
   });
 
   rl.on('close', () => {
-    console.log(`Number of students: ${noOfStudents}\n`);
+    console.log(`Number of students: ${noOfStudents}`);
     for (const field in stats) {
       if (Object.prototype.hasOwnProperty.call(stats, field)) {
         const studentCount = stats[field];
         console.log(`No of students in ${field}: ${studentCount}. `
-          + `List: ${studentNamesByField[field].join(', ')}\n`);
+          + `List: ${studentNamesByField[field].join(', ')}`);
       }
     }
   });
