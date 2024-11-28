@@ -78,6 +78,7 @@ const app = createServer((req, res) => {
         })
         .catch((error) => {
           res.writeHead(200);
+          res.write('This is the list of our students\n');
           res.end(error.message);
         });
       break;
