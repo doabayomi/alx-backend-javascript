@@ -70,10 +70,10 @@ const app = createServer((req, res) => {
       break;
 
     case '/students':
-      res.writeHead(200);
-      res.write('This is the list of our students\n');
       countStudents(database)
-        .then((studentOutline) => {
+      .then((studentOutline) => {
+          res.writeHead(200);
+          res.write('This is the list of our students\n');
           res.end(studentOutline);
         })
         .catch((error) => {
