@@ -62,7 +62,7 @@ const port = 1245;
 const database = process.argv[2];
 
 app.get('/', (req, res) => {
-  res.send('Helo Holberton School!');
+  res.send('Hello Holberton School!');
 });
 
 app.get('/students', (req, res) => {
