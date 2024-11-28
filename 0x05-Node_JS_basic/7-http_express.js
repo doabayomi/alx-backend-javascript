@@ -1,6 +1,6 @@
 const express = require('express');
-const fs = require('node:fs');
-const readline = require('node:readline');
+const fs = require('fs');
+const readline = require('readline');
 
 function countStudents(pathToDatabase) {
   return new Promise((resolve, reject) => {
