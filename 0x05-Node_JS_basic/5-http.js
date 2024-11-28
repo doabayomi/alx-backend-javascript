@@ -1,6 +1,6 @@
-const { createServer } = require('node:http');
-const fs = require('node:fs');
-const readline = require('node:readline');
+const { createServer } = require('http');
+const fs = require('fs');
+const readline = require('readline');
 
 function countStudents(pathToDatabase) {
   return new Promise((resolve, reject) => {

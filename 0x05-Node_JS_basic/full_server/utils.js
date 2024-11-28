@@ -1,5 +1,5 @@
-const fs = require('node:fs');
-const readline = require('node:readline');
+const fs = require('fs');
+const readline = require('readline');
 
 function readDatabase(pathToDatabase) {
   return new Promise((resolve, reject) => {
