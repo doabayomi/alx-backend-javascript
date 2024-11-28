@@ -59,7 +59,7 @@ function countStudents(pathToDatabase) {
 
 const hostname = '127.0.0.1';
 const port = 1245;
-const database = process.argv[2];
+const database = process.argv.length > 2 ? process.argv[2] : '';
 
 const app = createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');

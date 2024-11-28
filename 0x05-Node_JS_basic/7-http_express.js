@@ -59,7 +59,7 @@ function countStudents(pathToDatabase) {
 
 const app = express();
 const port = 1245;
-const database = process.argv[2];
+const database = process.argv.length > 2 ? process.argv[2] : '';
 
 app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
