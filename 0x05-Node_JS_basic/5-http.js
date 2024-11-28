@@ -72,14 +72,16 @@ const app = createServer((req, res) => {
     case '/students':
       countStudents(database)
         .then((studentOutline) => {
+          let message = `This is the list of our students\n${studentOutline}`;
           res.writeHead(200);
-          res.write('This is the list of our students\n');
-          res.end(studentOutline);
+          res.setHeader('Content-Length', message.length);
+          res.end(message);
         })
         .catch((error) => {
+          let message = `This is the list of our students\n${error.message}`;
           res.writeHead(200);
-          res.write('This is the list of our students\n');
-          res.end(error.message);
+          res.setHeader('Content-Length', message.length);
+          res.end(message);
         });
       break;
 

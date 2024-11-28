@@ -68,12 +68,16 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
   countStudents(database)
     .then((studentSummary) => {
+      let message = `This is the list of our students\n${studentSummary}`;
       res.setHeader('Content-Type', 'text/plain');
-      res.send(`This is the list of our students\n${studentSummary}`);
+      res.setHeader('Content-Length', message.length);
+      res.send(message);
     })
     .catch((error) => {
+      let message = `This is the list of our students\n${error.message}`;
       res.setHeader('Content-Type', 'text/plain');
-      res.send(`This is the list of our students\n${error.message}`);
+      res.setHeader('Content-Length', message.length);
+      res.send(message);
     });
 });
 
