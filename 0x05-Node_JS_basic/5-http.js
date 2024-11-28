@@ -71,13 +71,13 @@ const app = createServer((req, res) => {
 
     case '/students':
       countStudents(database)
-      .then((studentOutline) => {
+        .then((studentOutline) => {
           res.writeHead(200);
           res.write('This is the list of our students\n');
           res.end(studentOutline);
         })
         .catch((error) => {
-          res.writeHead(500);
+          res.writeHead(200);
           res.end(error.message);
         });
       break;
